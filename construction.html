@@ -17,16 +17,14 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
-            <div class="logo">
-                <a href="#home">
-                    <h1>Senthil Andavar Constructions</h1>
-                </a>
-            </div>
-            <div class="nav-toggle" title="Toggle navigation menu">
+            <a href="#home" class="logo">
+                <h1>Senthil Andavar Constructions</h1>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation menu">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
             <ul class="nav-links">
                 <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -53,7 +51,7 @@
             <h2 class="section-title" data-aos="fade-up">About Us</h2>
             <div class="about-content">
                 <div class="about-text" data-aos="fade-right">
-                    <p>Senthil Andavar Constructions brings excellence in interior design and construction with over 15 years of expertise. We specialize in creating stunning living spaces that blend functionality with aesthetic brilliance.</p>
+                    <p>Senthil Andavar Constructions brings excellence in interior design and construction with over 5 years of expertise. We specialize in creating stunning living spaces that blend functionality with aesthetic brilliance.</p>
 
                     <ul class="expertise-list">
                         <li><i class="fas fa-check"></i> Interior Design & Space Planning</li>
@@ -68,15 +66,15 @@
                 </div>
                 <div class="about-stats" data-aos="fade-left">
                     <div class="stat-item">
-                        <span class="stat-number">500+</span>
+                        <span class="stat-number">200</span>
                         <span class="stat-label">Projects Completed</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">100%</span>
-                        <span class="stat-label">Client Satisfaction</span>
+                        <span class="stat-number">100+</span>
+                        <span class="stat-label">Happy Clients</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">15+</span>
+                        <span class="stat-number">5+</span>
                         <span class="stat-label">Years Experience</span>
                     </div>
                 </div>
@@ -124,7 +122,10 @@
                     <button class="filter-btn active" data-filter="all">All Projects</button>
                     <button class="filter-btn" data-filter="wall-printing">Wall Printing</button>
                     <button class="filter-btn" data-filter="pooja-room">Pooja Room</button>
-                    <button class="filter-btn" data-filter="renovation">Renovation</button>
+                    <button class="filter-btn" data-filter="hall-decor">Hall Decor</button>
+                    <button class="filter-btn" data-filter="home-theatre">Home Theatre</button>
+                    <button class="filter-btn" data-filter="wardrobe">Wardrobe Design</button>
+                    <button class="filter-btn" data-filter="entrance">Home Entrance</button>
                 </div>
             </div>
 
@@ -149,31 +150,44 @@
                         <p>Creating sacred spaces with elegant design and spiritual essence</p>
                     </div>
                 </a>
-                <a href="modern-living-room.html" class="project-card" data-aos="fade-up" data-category="residential">
+                <!-- Hall Decor Project -->
+                <a href="hall-decor.html" class="project-card" data-category="hall-decor">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80" alt="Modern Living Room">
-                        <div class="project-overlay">
-                            <h3>Modern Living Room</h3>
-                            <p>Residential Project</p>
-                        </div>
+                        <img src="halldecor before.jpg" alt="Hall Decor Before">
+                    </div>
+                    <div class="project-overlay">
+                        <h3>Elegant Hall Decor</h3>
+                        <p>Transform your living space into a stunning masterpiece</p>
                     </div>
                 </a>
-                <a href="corporate-office.html" class="project-card" data-aos="fade-up" data-aos-delay="100" data-category="commercial">
+                <!-- Home Theatre Project -->
+                <a href="home-theatre.html" class="project-card" data-category="home-theatre">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80" alt="Office Space">
-                        <div class="project-overlay">
-                            <h3>Corporate Office</h3>
-                            <p>Commercial Project</p>
-                        </div>
+                        <img src="ht before.jpg" alt="Home Theatre Before">
+                    </div>
+                    <div class="project-overlay">
+                        <h3>Luxury Home Theatre</h3>
+                        <p>Experience cinema-quality entertainment in your home</p>
                     </div>
                 </a>
-                <a href="kitchen-renovation.html" class="project-card" data-aos="fade-up" data-aos-delay="200" data-category="renovation">
+                <!-- Wardrobe Design Project -->
+                <a href="wardrobe-design.html" class="project-card" data-category="wardrobe">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80" alt="Kitchen Renovation">
-                        <div class="project-overlay">
-                            <h3>Kitchen Renovation</h3>
-                            <p>Renovation Project</p>
-                        </div>
+                        <img src="Wd before.jpg" alt="Wardrobe Design Before">
+                    </div>
+                    <div class="project-overlay">
+                        <h3>Modern Wardrobe Design</h3>
+                        <p>Custom wardrobe solutions for organized and stylish storage</p>
+                    </div>
+                </a>
+                <!-- Home Entrance Project -->
+                <a href="home-entrance.html" class="project-card" data-category="entrance">
+                    <div class="project-image">
+                        <img src="entrance 1.jpg" alt="Home Entrance Design">
+                    </div>
+                    <div class="project-overlay">
+                        <h3>Elegant Home Entrance</h3>
+                        <p>Traditional meets modern in our stunning entrance designs</p>
                     </div>
                 </a>
             </div>
@@ -239,34 +253,33 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Elite Interiors</h3>
-                    <p>Transforming spaces into masterpieces with premium interior construction services.</p>
+                    <h3>About Us</h3>
+                    <p>Senthil Andavar Constructions - Your trusted partner in premium construction and interior solutions.</p>
                 </div>
                 <div class="footer-section">
                     <h3>Quick Links</h3>
-                    <ul>
+                    <ul class="footer-links">
                         <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#about">About</a></li>
                         <li><a href="#services">Services</a></li>
+                        <li><a href="#projects">Projects</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>Connect With Us</h3>
+                    <h3>Contact Info</h3>
+                    <p>Email: info@senthilandavar.com</p>
+                    <p>Phone: +1234567890</p>
                     <div class="social-links">
-                        <a href="https://wa.me/1234567890" class="whatsapp-link" aria-label="Chat on WhatsApp">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                        <a href="tel:+1234567890" class="phone-link" aria-label="Call us">
-                            <i class="fas fa-phone"></i>
-                        </a>
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Elite Interiors. All rights reserved.</p>
+                <p>&copy; 2024 Senthil Andavar Constructions. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -277,4 +290,3 @@
     <script src="construction-script.js"></script>
 </body>
 </html>
-
