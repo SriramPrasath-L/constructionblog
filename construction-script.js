@@ -1,78 +1,105 @@
-// Initialize AOS (Animate On Scroll)
+/ Initialize AOS (Animate On Scroll)
 AOS.init({
     duration: 800,
-    once: true,
-    offset: 100
+    easing: 'ease-in-out',
+    once: true
 });
 
-// Mobile Menu Toggle
-const navToggle = document.querySelector('.nav-toggle');
-const navLinks = document.querySelector('.nav-links');
+// Navigation Toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const navbar = document.querySelector('.navbar');
 
-navToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    navToggle.classList.toggle('active');
-});
+    // Toggle mobile menu
+    navToggle.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+        this.classList.toggle('active');
+    });
 
-// Close mobile menu when clicking outside
-document.addEventListener('click', (e) => {
-    if (!navLinks.contains(e.target) && !navToggle.contains(e.target)) {
-        navLinks.classList.remove('active');
-        navToggle.classList.remove('active');
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!navToggle.contains(e.target) && !navLinks.contains(e.target)) {
+            navLinks.classList.remove('active');
+            navToggle.classList.remove('active');
+        }
+    });
+
+    // Close mobile menu when clicking a link
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            navToggle.classList.remove('active');
+        });
+    });
+
+    // Navbar background change on scroll
+    function updateNavbar() {
+        if (window.scrollY > 50) {
+            navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+            navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+        } else {
+            navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+            navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.05)';
+        }
     }
+
+    // Initial navbar state
+    updateNavbar();
+
+    // Update navbar on scroll
+    window.addEventListener('scroll', updateNavbar);
 });
 
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-            // Close mobile menu after clicking
-            navLinks.classList.remove('active');
-            navToggle.classList.remove('active');
+        const href = this.getAttribute('href');
+        
+        // Only apply smooth scroll for same-page links
+        if (href.startsWith('#')) {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+                const navHeight = document.querySelector('.navbar').offsetHeight;
+                const targetPosition = target.getBoundingClientRect().top + window.scrollY - navHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
         }
     });
-});
-
-// Navbar background change on scroll
-const navbar = document.querySelector('.navbar');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
-        navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-    } else {
-        navbar.style.backgroundColor = 'var(--white)';
-        navbar.style.boxShadow = 'none';
-    }
 });
 
 // Active navigation link on scroll
-const sections = document.querySelectorAll('section');
+const sections = document.querySelectorAll('section[id]');
 const navItems = document.querySelectorAll('.nav-links a');
 
-window.addEventListener('scroll', () => {
-    let current = '';
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (window.scrollY >= sectionTop - 150) {
-            current = section.getAttribute('id');
-        }
-    });
+function setActiveNavItem() {
+    const scrollPosition = window.scrollY + 100; // Offset for navbar height
 
-    navItems.forEach(item => {
-        item.classList.remove('active');
-        if (item.getAttribute('href').slice(1) === current) {
-            item.classList.add('active');
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - document.querySelector('.navbar').offsetHeight;
+        const sectionBottom = sectionTop + section.offsetHeight;
+
+        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === '#' + section.getAttribute('id')) {
+                    item.classList.add('active');
+                }
+            });
         }
     });
-});
+}
+
+// Initial active state
+setActiveNavItem();
+
+// Update active state on scroll
+window.addEventListener('scroll', setActiveNavItem);
 
 // Form submission handling
 const contactForm = document.querySelector('.contact-form');
@@ -146,14 +173,14 @@ filterButtons.forEach(button => {
         filterButtons.forEach(btn => btn.classList.remove('active'));
         // Add active class to clicked button
         button.classList.add('active');
-
-        const filterValue = button.getAttribute('data-filter');
-
+        
+        const filter = button.getAttribute('data-filter');
+        
         projectCards.forEach(card => {
-            if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
-                card.classList.remove('hide');
+            if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                card.style.display = 'block';
             } else {
-                card.classList.add('hide');
+                card.style.display = 'none';
             }
         });
     });
