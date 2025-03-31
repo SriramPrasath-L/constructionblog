@@ -201,4 +201,200 @@
     .gallery-grid {
         grid-template-columns: 1fr;
     }
+}
+
+.image-comparison.landscape {
+    display: flex;
+    gap: 2rem;
+    margin: 2rem 0;
+    justify-content: center;
+}
+
+.image-comparison.landscape .before-image,
+.image-comparison.landscape .after-image {
+    position: relative;
+    width: 500px;
+    height: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-comparison.landscape img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+@media (max-width: 1200px) {
+    .image-comparison.landscape .before-image,
+    .image-comparison.landscape .after-image {
+        width: 450px;
+        height: 270px;
+    }
+}
+
+@media (max-width: 992px) {
+    .image-comparison.landscape {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-comparison.landscape .before-image,
+    .image-comparison.landscape .after-image {
+        width: 100%;
+        max-width: 600px;
+        height: 360px;
+    }
+}
+
+@media (max-width: 768px) {
+    .image-comparison.landscape .before-image,
+    .image-comparison.landscape .after-image {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .image-comparison.landscape .before-image,
+    .image-comparison.landscape .after-image {
+        height: 240px;
+    }
+}
+
+/* Wardrobe specific larger images */
+.wardrobe-design .image-comparison.landscape {
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.wardrobe-design .image-comparison.landscape .before-image,
+.wardrobe-design .image-comparison.landscape .after-image {
+    width: 600px;
+    height: 400px;
+}
+
+.wardrobe-design .image-comparison.landscape img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Responsive adjustments for wardrobe images */
+@media (max-width: 1400px) {
+    .wardrobe-design .image-comparison.landscape .before-image,
+    .wardrobe-design .image-comparison.landscape .after-image {
+        width: 500px;
+        height: 350px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .wardrobe-design .image-comparison.landscape .before-image,
+    .wardrobe-design .image-comparison.landscape .after-image {
+        width: 450px;
+        height: 300px;
+    }
+}
+
+@media (max-width: 992px) {
+    .wardrobe-design .image-comparison.landscape {
+        flex-direction: column;
+    }
+    .wardrobe-design .image-comparison.landscape .before-image,
+    .wardrobe-design .image-comparison.landscape .after-image {
+        width: 100%;
+        max-width: 700px;
+        height: 450px;
+    }
+}
+
+@media (max-width: 768px) {
+    .wardrobe-design .image-comparison.landscape .before-image,
+    .wardrobe-design .image-comparison.landscape .after-image {
+        height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .wardrobe-design .image-comparison.landscape .before-image,
+    .wardrobe-design .image-comparison.landscape .after-image {
+        height: 300px;
+    }
+}
+
+/* Entrance Design specific styles */
+.entrance-design .showcase-section {
+    margin-bottom: 4rem;
+}
+
+.entrance-design .image-comparison.landscape {
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.entrance-design .image-comparison.landscape .showcase-image {
+    position: relative;
+    width: 650px;
+    height: 450px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.entrance-design .image-comparison.landscape img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.entrance-design .showcase-image .label {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Responsive adjustments for entrance images */
+@media (max-width: 1400px) {
+    .entrance-design .image-comparison.landscape .showcase-image {
+        width: 550px;
+        height: 400px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .entrance-design .image-comparison.landscape .showcase-image {
+        width: 500px;
+        height: 350px;
+    }
+}
+
+@media (max-width: 992px) {
+    .entrance-design .image-comparison.landscape {
+        flex-direction: column;
+    }
+    .entrance-design .image-comparison.landscape .showcase-image {
+        width: 100%;
+        max-width: 800px;
+        height: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .entrance-design .image-comparison.landscape .showcase-image {
+        height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .entrance-design .image-comparison.landscape .showcase-image {
+        height: 300px;
+    }
 } 
