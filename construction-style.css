@@ -479,11 +479,26 @@ section {
 }
 
 .whatsapp-link {
-    color: #25D366;
+    color: #25D366 !important;
+    transition: var(--transition);
 }
 
 .whatsapp-link:hover {
-    color: #128C7E;
+    color: #128C7E !important;
+    text-decoration: none;
+}
+
+.contact-info .whatsapp-link {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.footer .whatsapp-link {
+    color: inherit !important;
+}
+
+.footer .whatsapp-link:hover {
+    color: var(--secondary-color) !important;
 }
 
 .phone-link {
@@ -508,6 +523,19 @@ section {
 .social-links .phone-link:hover {
     background-color: var(--secondary-color);
     transform: translateY(-3px);
+}
+
+.social-links .instagram-link:hover {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    transform: translateY(-3px);
+}
+
+.instagram-link {
+    transition: var(--transition);
+}
+
+.instagram-link:hover {
+    color: var(--secondary-color);
 }
 
 /* Footer */
@@ -814,4 +842,27 @@ section {
 /* Ensure navigation is visible on project pages */
 .project-details {
     padding-top: 80px; /* Height of navbar */
+}
+
+.footer .social-link {
+    margin-top: 15px;
+}
+
+.footer .instagram-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #E4405F;
+    text-decoration: none;
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+.footer .instagram-link i {
+    font-size: 1.2rem;
+}
+
+.footer .instagram-link:hover {
+    color: #C13584;
+    transform: translateX(5px);
 } 
