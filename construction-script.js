@@ -1,4 +1,4 @@
-/ Initialize AOS (Animate On Scroll)
+// Initialize AOS (Animate On Scroll)
 AOS.init({
     duration: 800,
     easing: 'ease-in-out',
